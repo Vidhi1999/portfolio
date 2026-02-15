@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Vidhi Chhatbar | Full Stack Software Engineer</title>
+	<script>
+	  // Apply theme immediately before page renders
+	  (function () {
+		const savedTheme = localStorage.getItem("theme");
+
+		if (!savedTheme || savedTheme === "dark") {
+		  document.documentElement.classList.add("dark");
+		} else {
+		  document.documentElement.classList.remove("dark");
+		}
+	  })();
+	</script>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#197fe6",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111921",
+                        "slate-custom": "#1e293b",
+                        "charcoal-custom": "#0f172a"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #197fe6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="transition-colors duration-300 bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 font-display">
+<nav class="fixed top-0 w-full z-50 glass-nav bg-white/80 dark:bg-background-dark/80 border-b border-slate-200 dark:border-slate-800 backdrop-blur-md transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white font-bold">V</div>
+            <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Vidhi Chhatbar<span class="text-primary">.</span></span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#about">About</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#experience">Experience</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projects</a>
+            <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+            <a class="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-primary/20" href="https://drive.google.com/file/d/1Hy5w2NrPGqgmqjn4f32Vj4GSc0ERu31A/view?usp=sharing">
+                Download Resume
+            </a>
+			<button id="theme-toggle" 
+  class="p-3 rounded-lg bg-slate-200 dark:bg-slate-800 transition-all">
+  <span id="theme-icon" 
+    class="material-icons text-slate-800 dark:text-white">
+    dark_mode
+  </span>
+</button>
+
+        </div>
+    </div>
+</nav>
+
+<header class="pt-40 pb-24 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6">
+            <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            <span>Available for New Opportunities</span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6 leading-tight max-w-4xl">
+            Architecting Scalable <span class="text-gradient">Full Stack Solutions</span> with AI Integration
+        </h1>
+        <p class="text-xl text-slate-600 dark:text-slate-400 mb-10 max-w-2xl leading-relaxed">
+            Full Stack Software Engineer | 5+ Years Experience | Java, Python, React &amp; GenAI
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center" href="#projects">
+                View Projects <span class="material-icons ml-2">arrow_downward</span>
+            </a>
+            <div class="flex gap-4">
+                <a href="https://github.com/Vidhi1999" class="p-4 bg-slate-200 dark:bg-slate-800 rounded-xl hover:bg-primary hover:text-white transition-all">
+                    <img src="https://cdn.simpleicons.org/github/default" class="w-6 h-6 dark:invert" alt="GitHub">
+                </a>
+                <a href="https://linkedin.com/in/vidhi-chhatbar/" 
+   target="_blank"
+   class="group p-4 bg-slate-200 dark:bg-slate-800 rounded-xl hover:bg-primary transition-all">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         viewBox="0 0 24 24" 
+         fill="currentColor" 
+         class="w-6 h-6 text-slate-700 dark:text-white group-hover:text-white transition-all">
+        <path d="M20.447 20.452H17.21V14.84c0-1.338-.027-3.062-1.865-3.062-1.867 0-2.154 1.46-2.154 2.967v5.707H9.054V9h3.112v1.561h.044c.434-.823 1.494-1.692 3.074-1.692 3.289 0 3.895 2.165 3.895 4.977v6.606zM5.337 7.433a1.814 1.814 0 110-3.628 1.814 1.814 0 010 3.628zM6.953 20.452H3.719V9h3.234v11.452zM22.225 0H1.771C.792 0 0 .775 0 1.728v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.728C24 .775 23.2 0 22.222 0h.003z"/>
+    </svg>
+
+</a>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="py-24 bg-slate-50 dark:bg-charcoal-custom/50" id="about">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="aspect-square rounded-2xl overflow-hidden bg-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+                    <img alt="Vidhi Chhatbar" class="w-full h-full object-cover object-top transition-all duration-700 hover:grayscale dark:grayscale dark:hover:grayscale-0" src="https://lh3.googleusercontent.com/d/1I98Fvb5RG8aKeNDWitnICLdxrc-W8JKQ"/>
+
+
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-primary p-6 rounded-xl shadow-xl hidden lg:block">
+                    <p class="text-white font-bold text-4xl">5+</p>
+                    <p class="text-white/80 text-sm font-medium">Years Experience</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-6 flex items-center">
+                    <span class="w-10 h-1 bg-primary mr-4"></span>
+                    About Me
+                </h2>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                    I am a dedicated Full Stack Engineer with a passion for building robust, scalable software systems. With a Master's degree in Computer Science from the <span class="text-slate-900 dark:text-white font-semibold">University of Southern California (USC)</span>, I combine academic excellence with over 5 years of industry experience.
+                </p>
+                <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                     My expertise lies in bridge the gap between complex backend architectures and intuitive frontend experiences. I have a proven track record of optimizing systems—reducing claims review cycles by 28% and ensuring 99.9% uptime for financial market data.
+                </p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                        <h4 class="font-bold text-primary mb-1">MS Computer Science</h4>
+                        <p class="text-sm opacity-80">University of Southern California</p>
+                    </div>
+                    <div class="p-4 rounded-lg bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                        <h4 class="font-bold text-primary mb-1">Based In</h4>
+                        <p class="text-sm opacity-80">United States</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 px-6" id="skills">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Technical Skills</h2>
+            <p class="text-slate-600 dark:text-slate-400">Expertise in building production-ready scalable systems.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="p-8 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+                    <span class="material-icons">code</span>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Languages</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Java</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Python</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">TypeScript</span>
+					<span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">JavaScript</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">C++</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">SQL</span>
+                </div>
+            </div>
+            <div class="p-8 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+                    <span class="material-icons">terminal</span>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Backend & APIs</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Spring Boot</span>
+					<span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Spring MVC</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">FastAPI</span>
+					<span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">RestfulAPI</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Django</span>
+					<span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Flask</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">GraphQL</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Node.js</span>
+                </div>
+            </div>
+            <div class="p-8 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+                    <span class="material-icons">cloud</span>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Cloud & DevOps</h3>
+                <div class="flex flex-wrap gap-2">
+					<span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Azure DevOps</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">AWS (S3, EC2)</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Docker</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Kubernetes</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Jenkins</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">GitHub Actions</span>
+                </div>
+            </div>
+            <div class="p-8 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+                    <span class="material-icons">psychology</span>
+                </div>
+                <h3 class="text-xl font-bold mb-4">AI & Machine Learning</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">LLM API Integration</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">RAG</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">TensorFlow</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">GitHub Copilot</span>
+					<span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Claude AI</span>
+                </div>
+            </div>
+            <div class="p-8 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+                    <span class="material-icons">layers</span>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Frontend</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">React.js</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Redux</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Tailwind CSS</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">HTML5/CSS3</span>
+                </div>
+            </div>
+            <div class="p-8 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-colors">
+                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-6">
+                    <span class="material-icons">storage</span>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Data & Messaging</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">PostgreSQL</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">MongoDB</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Kafka</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">RabbitMQ</span>
+                    <span class="px-3 py-1 rounded bg-slate-100 dark:bg-slate-700 text-sm font-medium">Redis</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-slate-50 dark:bg-charcoal-custom/50 px-6" id="experience">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-16 text-center">Work Experience</h2>
+        <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 dark:before:via-slate-700 before:to-transparent">
+            
+            <!-- AIG -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-900 bg-primary text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <span class="material-icons text-sm">corporate_fare</span>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-bold text-lg">AIG</h3>
+                        <span class="text-xs font-bold text-primary px-2 py-1 bg-primary/10 rounded">Oct 2025 - Present</span>
+                    </div>
+                    <p class="text-sm font-medium text-slate-500 mb-4 italic">Full Stack Developer</p>
+                    <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 list-disc list-inside">
+                        <li>Architected Spring Boot microservices with JWT security, reducing unauthorized access by <span class="text-primary font-bold">45%</span>.</li>
+                        <li>Automated CI/CD via GitHub Actions and AWS, decreasing production failures by <span class="text-primary font-bold">35%</span>.</li>
+                        <li>Integrated ChatGPT APIs to automate document summarization, reducing cycle time by <span class="text-primary font-bold">28%</span>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Job Map -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-900 bg-slate-400 dark:bg-slate-600 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <span class="material-icons text-sm">work</span>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-bold text-lg">Job Map</h3>
+                        <span class="text-xs font-medium text-slate-500 px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">May 2025 - July 2025</span>
+                    </div>
+                    <p class="text-sm font-medium text-slate-500 mb-4 italic">Software Engineer Intern</p>
+                    <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 list-disc list-inside">
+                        <li>Built full-stack React application, optimizing API calls to reduce load time by <span class="text-primary font-bold">30%</span>.</li>
+                        <li>Developed FastAPI services with Anthropic LLM APIs, improving user interaction speed by <span class="text-primary font-bold">20%</span>.</li>
+                        <li>Increased test coverage by <span class="text-primary font-bold">35%</span> using AWS CloudFormation and automated test generation.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- MSCI -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-900 bg-slate-400 dark:bg-slate-600 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <span class="material-icons text-sm">work</span>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-bold text-lg">MSCI Inc</h3>
+                        <span class="text-xs font-medium text-slate-500 px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">June 2021 - July 2024</span>
+                    </div>
+                    <p class="text-sm font-medium text-slate-500 mb-4 italic">Technology Associate (SDE-II)</p>
+                    <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 list-disc list-inside">
+                        <li>Engineered Java microservices maintaining <span class="text-primary font-bold">99.9% uptime</span> for financial transactions.</li>
+                        <li>Integrated Kafka for event-driven data processing, improving responsiveness by <span class="text-primary font-bold">25%</span>.</li>
+                        <li>Optimized PostgreSQL queries, reducing execution time by <span class="text-primary font-bold">20%</span>.</li>
+						<li>Led Agile delivery, managed JIRA tasks, built Postman test cases, and achieved  <span class="text-primary font-bold">95%</span> SLA incident resolution while mentoring juniors.</li>
+                    </ul>
+                </div>
+            </div>
+			
+			<!-- Aspire Technolab -->
+            <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white dark:border-slate-900 bg-slate-400 dark:bg-slate-600 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                    <span class="material-icons text-sm">work</span>
+                </div>
+                <div class="w-[calc(100%-4rem)] md:w-[45%] p-6 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-bold text-lg">Aspire Technolab</h3>
+                        <span class="text-xs font-medium text-slate-500 px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded">Jan 2020 - Nov 2020</span>
+                    </div>
+                    <p class="text-sm font-medium text-slate-500 mb-4 italic">Software Development Engineer - I</p>
+                    <ul class="text-sm text-slate-600 dark:text-slate-400 space-y-2 list-disc list-inside">
+                        <li>Built scalable Django microservices with GraphQL APIs, improving data retrieval speed by <span class="text-primary font-bold">25%.</span></li>
+                        <li>Developed TypeScript + Redux dashboards, boosting internal workflow efficiency by <span class="text-primary font-bold">15%</span>.</li>
+                        <li>Automated testing and CI/CD with Jenkins & Azure DevOps, reducing production defects by <span class="text-primary font-bold">30%.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-24 px-6" id="projects">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+            <div>
+                <h2 class="text-3xl font-bold mb-2">Featured Projects</h2>
+                <p class="text-slate-600 dark:text-slate-400">End-to-End Engineering Across AI and Web Platforms.</p>
+            </div>
+            <a class="text-primary font-bold hover:underline flex items-center" href="https://github.com/Vidhi1999">
+                View GitHub <span class="material-icons text-sm ml-1">open_in_new</span>
+            </a>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Medical Image Project -->
+            <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all">
+                <div class="relative h-64 overflow-hidden">
+                    <img alt="Medical Image Interpretation" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-6">
+                        <span class="px-2 py-1 bg-primary text-white text-[10px] font-bold uppercase rounded">Deep Learning</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4">Medical Image Interpretation</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6">
+                        X-ray analysis system using CNN and BERT, achieving 90% accuracy in abnormality detection with a Django web UI.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">Python</span>
+                        <span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">TensorFlow</span>
+                        <span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">Django</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a class="flex-1 text-center py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all" href="https://github.com/Vidhi1999/Project-ML-Medical-Images/blob/main/README.md">View Details</a>
+                        <a class="p-3 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all" href="https://github.com/Vidhi1999/Project-ML-Medical-Images">
+                            <span class="material-icons text-xl">code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edge Detection Project -->
+            <div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all">
+                <div class="relative h-64 overflow-hidden">
+                    <img alt="Edge Detection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                    <div class="absolute bottom-4 left-6">
+                        <span class="px-2 py-1 bg-primary text-white text-[10px] font-bold uppercase rounded">Computer Vision</span>
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-4">Edge Detection from Scratch</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-6">
+                        Implemented Canny edge detection algorithm in Python/OpenCV, optimizing noise reduction to decrease MSE by 5%.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">Python</span>
+                        <span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">OpenCV</span>
+                        <span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">Algorithms</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <a class="flex-1 text-center py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all" href="https://github.com/Vidhi1999/Canny_Edge_Detection/blob/main/README.md">View Details</a>
+                        <a class="p-3 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all" href="https://github.com/Vidhi1999/Canny_Edge_Detection">
+                            <span class="material-icons text-xl">code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+			
+			<!-- Sketch Jump Game -->
+			<div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all">
+				<div class="relative h-64 overflow-hidden">
+					<img alt="Sketch Jump Game" 
+						 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+						 src="https://lh3.googleusercontent.com/d/1plN_Tgjdu4nlqX3QoyFZIO_xK0x58eWk"/>
+						 
+					<div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+					<div class="absolute bottom-4 left-6">
+						<span class="px-2 py-1 bg-primary text-white text-[10px] font-bold uppercase rounded">
+							Game Development
+						</span>
+					</div>
+				</div>
+				<div class="p-8">
+					<h3 class="text-2xl font-bold mb-4">Sketch Jump Game</h3>
+					<p class="text-slate-600 dark:text-slate-400 mb-6">
+						Developed a 2D Unity platformer implementing multiple platform types, custom game mechanics, animated menus, and original art design.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-8">
+						<span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">Unity</span>
+						<span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">C#</span>
+						<span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">Game Design</span>
+					</div>
+					<div class="flex items-center space-x-4">
+						<a class="flex-1 text-center py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all" href="https://ybssssss.github.io/SketchJumpFinal/">
+							View Demo
+						</a>
+						<a class="p-3 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all" href="https://github.com/Vidhi1999/Sketch-Jump">
+							<span class="material-icons text-xl">code</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Online Food Ordering System -->
+			<div class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 hover:shadow-2xl transition-all">
+				<div class="relative h-64 overflow-hidden">
+					<img alt="Online Food Ordering System" 
+						 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+						 src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800"/>
+					<div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+					<div class="absolute bottom-4 left-6">
+						<span class="px-2 py-1 bg-primary text-white text-[10px] font-bold uppercase rounded">
+							Full Stack
+						</span>
+					</div>
+				</div>
+				<div class="p-8">
+					<h3 class="text-2xl font-bold mb-4">Online Food Ordering System</h3>
+					<p class="text-slate-600 dark:text-slate-400 mb-6">
+						Built a full-stack food ordering platform with user browsing, ordering features, and an admin dashboard for inventory and data management.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-8">
+						<span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">HTML</span>
+						<span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">PHP</span>
+						<span class="px-2 py-1 text-xs bg-slate-100 dark:bg-slate-700 rounded">Bootstrap</span>
+					</div>
+					<div class="flex items-center space-x-4">
+						<a class="flex-1 text-center py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all" href="https://github.com/Vidhi1999/Food_Ordering_System/blob/main/README.md">
+							View Details
+						</a>
+						<a class="p-3 border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all" href="https://github.com/Vidhi1999/Food_Ordering_System">
+							<span class="material-icons text-xl">code</span>
+						</a>
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 bg-slate-50 dark:bg-charcoal-custom/50 px-6">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-bold mb-8 flex items-center">
+                    <span class="material-icons text-primary mr-3">school</span>
+                    Education
+                </h2>
+                <div class="space-y-6">
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 -mr-8 -mt-8 bg-primary/5 rounded-full"></div>
+                        <h3 class="font-bold text-lg mb-1">University of Southern California</h3>
+                        <p class="text-primary font-medium text-sm mb-2">Master of Science in Computer Science | GPA: 3.81/4</p>
+                        <p class="text-xs text-slate-500">Los Angeles, CA | May 2026</p>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 -mr-8 -mt-8 bg-primary/5 rounded-full"></div>
+                        <h3 class="font-bold text-lg mb-1">Sardar Patel Institute of Technology</h3>
+                        <p class="text-primary font-medium text-sm mb-2">Bachelor of Technology in IT | GPA: 9.3/10</p>
+                        <p class="text-xs text-slate-500">India | May 2021</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold mb-8 flex items-center">
+                    <span class="material-icons text-primary mr-3">verified</span>
+                    Certifications
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-5 flex items-center bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="material-icons text-primary">cloud_done</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Azure Fundamentals</h4>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider">AZ-900</p>
+                        </div>
+                    </div>
+                    <div class="p-5 flex items-center bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                        <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="material-icons text-primary">developer_mode</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-sm">Azure Developer Associate</h4>
+                            <p class="text-[10px] text-slate-500 uppercase tracking-wider">AZ-204</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-24 px-6 bg-white dark:bg-background-dark" id="contact">
+    <div class="max-w-7xl mx-auto">
+        <div class="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
+            <div class="lg:w-1/3 bg-primary p-12 text-white flex flex-col justify-between">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Let's connect.</h2>
+                    <p class="text-primary-100 opacity-80 mb-12">I'm currently seeking Full Stack or Backend Engineer roles. Ready to relocate for the right opportunity.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <span class="material-icons text-xl opacity-70">email</span>
+                            <span class="font-medium">vidhi.chhatbar@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="material-icons text-xl opacity-70">phone</span>
+                            <span class="font-medium">(951) 701-5988</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="material-icons text-xl opacity-70">location_on</span>
+                            <span class="font-medium">Los Angeles, CA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-2/3 p-12 bg-slate-50 dark:bg-slate-800">
+                <form id="contact-form" action="https://formsubmit.co/vidhi.chhatbar@gmail.com" method="POST" class="space-y-6">
+					<input type="hidden" name="_captcha" value="false">
+					<input type="hidden" name="_subject" value="New Portfolio Contact Message">
+					<input type="hidden" name="_template" value="table">
+
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Name</label>
+                            <input name="name" required class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Enter your name" type="text"/>
+
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Email</label>
+                            <input name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="Enter your email" type="email"/>
+
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Message</label>
+                        <textarea name="message" required class="w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 focus:ring-2 focus:ring-primary focus:border-transparent transition-all" placeholder="How can I help with your engineering team?" rows="5"></textarea>
+
+                    </div>
+                    <button class="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all shadow-xl shadow-primary/20" type="submit">Send Message</button>
+					<div id="form-success" class="hidden opacity-0 transition-opacity duration-300 mb-6 p-4 rounded-lg bg-green-100 text-green-800 font-semibold">
+						✅ Message sent successfully!
+					</div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-12 border-t border-slate-200 dark:border-slate-800 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center space-x-2">
+            <div class="w-6 h-6 bg-primary rounded flex items-center justify-center text-white text-[10px] font-bold">V</div>
+            <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Vidhi Chhatbar<span class="text-primary">.</span></span>
+        </div>
+        <p class="text-sm text-slate-500">© 2026 Vidhi Chhatbar. Built with Impact.</p>
+        <div class="flex space-x-6 text-sm font-medium">
+            <a class="hover:text-primary transition-colors" href="https://linkedin.com/in/vidhi-chhatbar/">LinkedIn</a>
+            <a class="hover:text-primary transition-colors" href="https://github.com/Vidhi1999">GitHub</a>
+        </div>
+    </div>
+</footer>
+
+<a class="fixed bottom-8 right-8 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl z-50 hover:scale-110 transition-transform" href="#">
+    <span class="material-icons">expand_less</span>
+</a>
+
+<script>
+
+  const html = document.documentElement;
+  const toggleBtn = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-icon");
+
+  // Load saved theme or system preference
+  if (
+    localStorage.getItem("theme") === "dark" ||
+    (!localStorage.getItem("theme") && window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    html.classList.add("dark");
+    icon.textContent = "light_mode";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    html.classList.toggle("dark");
+
+    if (html.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      icon.textContent = "light_mode";
+    } else {
+      localStorage.setItem("theme", "light");
+      icon.textContent = "dark_mode";
+    }
+  });
+  
+  const form = document.getElementById("contact-form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent redirect
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+	  if (response.ok) {
+		const successMessage = document.getElementById("form-success");
+		
+		successMessage.classList.remove("hidden", "opacity-0");
+		successMessage.classList.add("opacity-100");
+
+		form.reset();
+
+		// Auto hide after 4 seconds
+		setTimeout(() => {
+		  successMessage.classList.remove("opacity-100");
+		  successMessage.classList.add("opacity-0");
+
+		  // Fully hide after fade
+		  setTimeout(() => {
+			successMessage.classList.add("hidden");
+		  }, 300);
+		}, 4000);
+
+	  } else {
+		alert("❌ Something went wrong. Please try again.");
+	  }
+	})
+    .catch(error => {
+      alert("❌ Error submitting form.");
+    });
+  });
+  
+</script>
+
+</body>
+</html>
