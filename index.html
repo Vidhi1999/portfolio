@@ -68,6 +68,11 @@
             <div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-white font-bold">V</div>
             <span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Vidhi Chhatbar<span class="text-primary">.</span></span>
         </div>
+		<!-- Mobile Hamburger Button -->
+<button id="mobile-menu-btn" class="md:hidden p-2">
+    <span class="material-icons text-3xl text-slate-900 dark:text-white">menu</span>
+</button>
+
         <div class="hidden md:flex items-center space-x-8">
             <a class="text-sm font-medium hover:text-primary transition-colors" href="#about">About</a>
             <a class="text-sm font-medium hover:text-primary transition-colors" href="#skills">Skills</a>
@@ -88,6 +93,30 @@
         </div>
     </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden fixed top-20 left-0 w-full bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 shadow-lg z-40">
+    <div class="flex flex-col space-y-4 px-6 py-6">
+        <a href="#about" class="text-sm font-medium hover:text-primary">About</a>
+        <a href="#skills" class="text-sm font-medium hover:text-primary">Skills</a>
+        <a href="#experience" class="text-sm font-medium hover:text-primary">Experience</a>
+        <a href="#projects" class="text-sm font-medium hover:text-primary">Projects</a>
+        <a href="#contact" class="text-sm font-medium hover:text-primary">Contact</a>
+
+        <a href="https://drive.google.com/file/d/1Hy5w2NrPGqgmqjn4f32Vj4GSc0ERu31A/view?usp=sharing"
+           class="bg-primary text-white px-4 py-2 rounded-lg text-center font-semibold">
+           Download Resume
+        </a>
+
+        <button id="mobile-theme-toggle"
+                class="p-3 rounded-lg bg-slate-200 dark:bg-slate-800 transition-all">
+            <span id="mobile-theme-icon" class="material-icons text-slate-800 dark:text-white">
+			dark_mode
+			</span>
+        </button>
+    </div>
+</div>
+
 
 <header class="pt-40 pb-24 px-6">
     <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
@@ -620,9 +649,46 @@
 
 <script>
 
+	// Mobile Menu Toggle
+	const mobileBtn = document.getElementById("mobile-menu-btn");
+	const mobileMenu = document.getElementById("mobile-menu");
+
+	mobileBtn.addEventListener("click", () => {
+		mobileMenu.classList.toggle("hidden");
+	});
+
+
   const html = document.documentElement;
   const toggleBtn = document.getElementById("theme-toggle");
   const icon = document.getElementById("theme-icon");
+  
+  const mobileThemeBtn = document.getElementById("mobile-theme-toggle");
+  const mobileIcon = document.getElementById("mobile-theme-icon");
+  
+  // Function to update icons
+	function updateThemeIcons() {
+		if (html.classList.contains("dark")) {
+			icon.textContent = "light_mode";
+			mobileIcon.textContent = "light_mode";
+		} else {
+			icon.textContent = "dark_mode";
+			mobileIcon.textContent = "dark_mode";
+		}
+	}
+
+	// Mobile toggle
+	mobileThemeBtn.addEventListener("click", () => {
+		html.classList.toggle("dark");
+
+		if (html.classList.contains("dark")) {
+			localStorage.setItem("theme", "dark");
+		} else {
+			localStorage.setItem("theme", "light");
+		}
+
+		updateThemeIcons();
+	});
+
 
   // Load saved theme or system preference
   if (
@@ -644,6 +710,9 @@
       icon.textContent = "dark_mode";
     }
   });
+  
+  // Initialize correct icon on load
+  updateThemeIcons();
   
   const form = document.getElementById("contact-form");
 
